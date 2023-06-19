@@ -75,7 +75,7 @@ class WeatherSimulation(threading.Thread):
         self.child.sendline(send_str.encode('ascii'))
 
     def interact_step_menu(self, menu):
-        self.interact('Steps: What do you want to do \?', menu)
+        self.interact('What do you want to do \?', menu)
 
     def set_sim_steps_times(self, start, dur, last):
         self.interact_step_menu('2')
@@ -433,7 +433,7 @@ class WeatherSimulation(threading.Thread):
             self.child.sendline(b'\n')
 
             if _steps_menu:
-                self.child.expect('Steps: What do you want to do \?')
+                self.child.expect('What do you want to do \?')
                 self._print("In Step menu")
                 self._print("Going to main menu")
                 self.child.sendline('0'.encode('ascii'))

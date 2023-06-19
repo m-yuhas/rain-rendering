@@ -139,6 +139,6 @@ COPY tools /opt/rain-rendering/tools
 
 # Set default command and working directory
 WORKDIR /opt/rain-rendering/
-SHELL ["/bin/bash", "-c"]
+VOLUME /opt/rain-rendering/data/
 RUN echo "conda activate py36_weatheraugment" >> ~/.bashrc
 CMD ["/bin/bash"]
